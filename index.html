@@ -5,26 +5,28 @@
   </head>
   <body>
     <script>
-      var input, digits, p, inside;
+      var input, digits, p, inside, PI = 3, n = 2, sign = 1;;
         p = document.createElement("p");
         p.onclick = display;
         document.body.appendChild(p);
       function display(){
        input = prompt("Choose a number of digits of pi to display!");
       digits = parseInt(input);
-    let numerator = 0;
-    let pi = 1;
 
-    for(let i = 1; i <= digits; i++)
-    {
-        numerator = Math.sqrt(2 + numerator);
-
-        pi*= (numerator / 2);
+     for (let i = 0; i <= digits; i++) {
+        PI = PI + (sign * (4 / ((n) * (n + 1)
+                                * (n + 2))));
+ 
+        // Addition and subtraction
+        // of alternate sequences
+        sign = sign * (-1);
+ 
+        // Increment by 2 according to formula
+        n += 2;
     }
+ 
 
-    pi = (1 / pi) * 2;
         p.innerHTML = "Click to regenerate. Here is Pi: "+ pi;
-;
         
       }
       display();
