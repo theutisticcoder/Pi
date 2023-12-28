@@ -10,7 +10,7 @@
       digits = parseInt(input);
         p = document.createElement("p");
         p.onclick = display;
-        p.innerHTML = "Click to regenerate, but here is Pi: "+ Math.PI.toFixed(digits);
+        p.innerHTML = "Click to regenerate, but here is Pi: "+ (Math.round(Math.PI * 10 ** digits)/ 10 ** digits);
         document.body.appendChild(p);
       function display(){
        input = prompt("Choose a number of digits of pi to display!");
