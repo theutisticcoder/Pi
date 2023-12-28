@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, Pi!</title>
+  </head>
+  <body>
+    <script>
+      var input, digits, p;
+       input = prompt("Choose a number of digits of pi to display!");
+      digits = parseInt(input);
+        p = document.createElement("p");
+        p.onclick = display();
+        p.innerHTML = "Click to regenerate, but here is Pi: "+ Math.PI.toFixed(digits);
+        document.body.appendChild(p);
+      function display(){
+       input = prompt("Choose a number of digits of pi to display!");
+      digits = parseInt(input);
+        p.innerHTML = "Click to regenerate, but here is Pi: "+ Math.PI.toFixed(digits);
+      }
+    </script>
+  </body>
+</html>
