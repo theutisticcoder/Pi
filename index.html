@@ -12,16 +12,18 @@
       function display(){
        input = prompt("Choose a number of digits of pi to display!");
       digits = parseInt(input);
-         inside = 0;
+    let numerator = 0;
+    let pi = 1;
 
-    for (var i = 0; i < digits; i++) {
-        var x = random()*2-1;
-        var y = random()*2-1;
-        if ((x*x + y*y) < 1) {
-            inside++;
-        }
+    for(let i = 1; i <= digits; i++)
+    {
+        numerator = Math.sqrt(2 + numerator);
+
+        pi*= (numerator / 2);
     }
-        p.innerHTML = "Click to regenerate. Here is Pi: "+ (4.0 * inside / digits);
+
+    pi = (1 / pi) * 2;
+        p.innerHTML = "Click to regenerate. Here is Pi: "+ pi;
 ;
         
       }
