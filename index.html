@@ -5,18 +5,27 @@
   </head>
   <body>
     <script>
-      var input, digits, p;
-       input = prompt("Choose a number of digits of pi to display!");
-      digits = parseInt(input);
+      var input, digits, p, inside;
         p = document.createElement("p");
         p.onclick = display;
-        p.innerHTML = "Click to regenerate, but here is Pi: "+ (Math.round(Math.PI * 10 ** digits)/ 10 ** digits);
         document.body.appendChild(p);
       function display(){
        input = prompt("Choose a number of digits of pi to display!");
       digits = parseInt(input);
-        p.innerHTML = "Click to regenerate, but here is Pi: "+ (Math.round(Math.PI * 10 ** digits)/ 10 ** digits);
+         inside = 0;
+
+    for (var i = 0; i < digits; i++) {
+        var x = random()*2-1;
+        var y = random()*2-1;
+        if ((x*x + y*y) < 1) {
+            inside++;
+        }
+    }
+        p.innerHTML = "Click to regenerate. Here is Pi: "+ (4.0 * inside / digits);
+;
+        
       }
+      display();
     </script>
   </body>
 </html>
